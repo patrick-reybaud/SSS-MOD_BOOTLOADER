@@ -104,7 +104,7 @@
   #define BINARY_ADDRESS       0U
 #elif (BINARY_AREA == USE_SPI_NOR)
   #define BINARY_BASE_OFFSET   0x0U
-  #define BINARY_SIZE         33000U
+  #define BINARY_SIZE         8192000U
 
 #endif
 

@@ -113,7 +113,7 @@ uint32_t QSPI_Startup(uint32_t Mode)
   {
     return MEMORY_ERROR;
   }
- 
+
   /* Set the QSPI memory in 4-bytes address mode */
   if (QSPI_EnterFourBytesAddress(&QSPIHandle) != MEMORY_OK)
   {
@@ -125,7 +125,7 @@ uint32_t QSPI_Startup(uint32_t Mode)
   {
     return MEMORY_ERROR;
   }
- 
+
 #if (CODE_AREA == USE_QSPI)
   /* Enable MemoryMapped mode */
   if( QSPI_EnableMemoryMappedMode(&QSPIHandle) != MEMORY_OK )
@@ -137,7 +137,7 @@ uint32_t QSPI_Startup(uint32_t Mode)
   {
     return MEMORY_ERROR;
   }
-  
+
   if (QSPI_Shutdown() != MEMORY_OK)
   {
     return MEMORY_ERROR;
@@ -161,7 +161,7 @@ static uint32_t QSPI_Shutdown(void)
 
   /* System level De-initialization */
   QSPI_MspDeInit();
-  
+
   return MEMORY_OK;
 }
 
@@ -316,7 +316,7 @@ static uint32_t QSPI_ResetMemory(QSPI_HandleTypeDef *hqspi)
   if(QSPI_EnterQPI(hqspi) != MEMORY_OK)
   {
     return MEMORY_ERROR;
-  }  
+  }
 
   /* Configure automatic polling mode to wait the memory is ready */
   if (QSPI_AutoPollingMemReady(hqspi, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != MEMORY_OK)
@@ -512,7 +512,7 @@ static uint32_t QSPI_AutoPollingMemReady(QSPI_HandleTypeDef *hqspi, uint32_t Tim
 
 /**
   * @brief  This function enter the QPSI memory in QPI mode
-  * @param  hqspi QSPI handle 
+  * @param  hqspi QSPI handle
   * @retval QSPI status
   */
 static uint8_t QSPI_EnterQPI(QSPI_HandleTypeDef *hqspi)
@@ -533,7 +533,7 @@ static uint8_t QSPI_EnterQPI(QSPI_HandleTypeDef *hqspi)
   {
     return MEMORY_ERROR;
   }
-  
+
   return MEMORY_OK;
 }
 
